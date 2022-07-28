@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import {GoSearch} from 'react-icons/go'
+import { Alert } from './Alert'
 
 export const Searchbar = () => {
     const [searchQuery, updateSearch] = useState('')
@@ -10,6 +11,7 @@ export const Searchbar = () => {
     }
   return (
     <div className='searchbar'>
+      <Alert message='Nothing show' type='danger' />
         <form className='searchbar__form'>
             
             <input type="text" placeholder='search movies' value={searchQuery} onChange = {(e) => updateSearch(e.target.value)} />
