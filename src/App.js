@@ -1,12 +1,27 @@
+import { Routes, Route, BrowserRouter} from 'react-router-dom'
 
-import './App.css';
+import {Navbar} from './components/Navbar'
+import { Aboutpage } from './pages/Aboutpage';
+import {Homepage} from './pages/Homepage'
+import { Showdetails } from './pages/Showdetails';
+
 
 function App() {
   return (
-    <div className="App">
-      <h1>React</h1>
-      
+    <BrowserRouter>
+    <Navbar />
+    <div className="container">
+    <Routes>
+        <Route path='/' element = {<Homepage />}  />
+        <Route path='/about' element = {<Aboutpage />} />
+        <Route path='/showdetails/:id' element = {<Showdetails />} />
+
+    </Routes>
     </div>
+    </BrowserRouter>
+      
+      
+    
   );
 }
 
