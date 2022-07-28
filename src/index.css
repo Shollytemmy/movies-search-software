@@ -10,3 +10,53 @@ body {
   max-width: 1170px;
   margin: auto;
 }
+
+/* Navbar styles*/
+.navbar{
+  padding: 0.3rem;
+  background-color: #171717;
+}
+
+.navbar__nav{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border: 0px solid red;
+}
+
+.nav__brand a{
+  font-size: 1.8rem;
+  color: #f4f4f4;
+  text-decoration: none;
+}
+
+.nav__brand a:hover{
+  color: #3c94;
+}
+
+.nav__links{
+  display: flex;
+  list-style: none;
+  align-items: center;
+ 
+}
+
+.links__link{
+  border: 0px solid red;
+  padding: 1rem;
+  
+
+}
+
+.links__link a{
+  display: block;
+  color: #f4f4f4;
+  font-size: 20px;
+  text-decoration: none;
+  border: 1px solid #171717;
+}
+
+.links__link a:hover{
+  border-bottom: 1px solid #3c94;
+  color:#3c94;
+}

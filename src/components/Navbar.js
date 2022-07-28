@@ -7,22 +7,25 @@ export const Navbar = () => {
   return (
     <div className='navbar'>
         <div className="container">
-            <nav>
-                <Link to='/' >
-                    <h3>
+            <nav className='navbar__nav'>
+                
+                    <h3 className='nav__brand'>
+                        <Link to='/' >
                         <SiThemoviedatabase /> Movies Search App
+                         </Link>
                     </h3>
-                    <ul>
-                        <li>
+                   
+                    <ul className='nav__links'>
+                        <li className='links__link'>
                             <Link to="/" >Home</Link>
                         </li>
-                        
-                        <li>
+
+                        <li className='links__link'>
                             <Link to='/about'>About</Link>
                         </li>
                     </ul>
 
-                </Link>
+                
             </nav>
         </div>
     </div>
