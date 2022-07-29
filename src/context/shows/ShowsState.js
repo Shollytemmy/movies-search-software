@@ -1,6 +1,8 @@
+import axios from 'axios'
 import {useReducer} from 'react'
-import showsContext from './showsContext'
+import ShowsContext from './showsContext'
 import ShowsReducer from './showsReducer'
+
 import {
     SEARCH_SHOWS,
     SET_LOADING,
@@ -12,11 +14,47 @@ import {
 
 } from '../types'
 
+const base_url = ' https://api.tvmaze.com'
 
-import React from 'react'
 
-export const ShowsState = () => {
+export const ShowsState = (props) => {
+  const initialState ={
+    shows: [],
+    showdetail: {},
+    loading: false
+  }
+
+  const [state, dispatch] = useReducer(ShowsReducer, initialState)
+
+  const searchShows = async(searchQuery) => {
+    dispatch({type: SET_LOADING})
+
+    // fetch
+
+    const {data} = await axios.get(` ${base_url}/search/shows?q=${searchQuery}`)
+
+    console.log(data)
+
+    dispatch({
+      type: SEARCH_SHOWS,
+      payload: data
+    })
+
+  }
+  
+
   return (
-    <div>ShowsState</div>
+    <ShowsContext.Provider value={{
+      shows: state.shows,
+      showdetail: state.showdetail,
+      loding: state.loading,
+      searchShows
+
+      
+
+    }}>
+      {props.children}
+
+    </ShowsContext.Provider>
   )
 }

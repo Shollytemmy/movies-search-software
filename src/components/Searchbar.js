@@ -1,13 +1,15 @@
-import React, { useState } from 'react'
-import {GoSearch} from 'react-icons/go'
+import React, { useState, useContext } from 'react'
+import ShowsContext from '../context/shows/showsContext';
+
 import { Alert } from './Alert'
 
 export const Searchbar = () => {
     const [searchQuery, updateSearch] = useState('')
+    const {searchShows} = useContext(ShowsContext)
 
     const handleSearch = (e) => {
         e.preventDefault();
-        console.log('searchQuery', searchQuery);
+        searchShows(searchQuery)
     }
   return (
     <div className='searchbar'>

@@ -1,6 +1,6 @@
 :root{
   --dark-color: #171717;
-  --hover-color: #3c94;
+  --hover-color: rgba(49, 213, 158, 0.267);
   --main-color: #f4f4f4
 }
 
@@ -130,3 +130,56 @@ body {
 }
 .alert-info {}
 
+/*listItem*/
+
+img{
+  width: 210px;
+  height: 295px;
+}
+
+.listItem{
+  width: 210px ;
+  background-color: var(--main-color);
+  margin: 1rem auto;
+  text-decoration: none;
+  display: inline-block;
+  box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
+  cursor: pointer;
+}
+
+/* .listItem__container{
+  border: 1px solid red;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  width: 210px;
+} */
+
+.listItem:hover{
+  transform: scale(1.1);
+}
+
+.listItem__info{
+  color: var(--dark-color);
+  text-align: center;
+}
+
+.info__rating{
+  color: #f89292;
+  padding: 1rem 0;
+}
+
+.info__name{
+  padding: 5px;
+  font-size: 1rem 0;
+}
+
+
+/*HomePage*/
+
+.listItem__list{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
