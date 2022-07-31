@@ -186,7 +186,12 @@ img{
   padding: 1rem;
  
   
-  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  /* box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px; */
+}
+
+.showdetail > img{
+  height: 250px;
+  width: 210px;
 }
 
 .showdetail__detail{
@@ -216,4 +221,8 @@ img{
 .detail__official{
   font-size: 16px;
   
+}
+.about{
+  width: 200px;
+  margin: 2rem auto;
 }
