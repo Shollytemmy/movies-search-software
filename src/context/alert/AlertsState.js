@@ -1,5 +1,5 @@
 import { useReducer } from "react";
-import AlertContext from './alertsContext'
+import AlertsContext from './alertsContext'
 import AlertReducer from './alertsReducer'
 import { SET_ALERT, REMOVE_ALERT } from "../types";
 
@@ -11,7 +11,8 @@ export const AlertsState = (props) => {
 
     const [state, dispatch] = useReducer(AlertReducer, initialState)
 
-    const setAlerts = ({message, type}) => {
+    const setAlerts = (message, type) => {
+        console.log(message, type)
         dispatch({
             type: SET_ALERT,
             payload:{
@@ -27,17 +28,15 @@ export const AlertsState = (props) => {
 
 
   return (
-    <AlertContext.Provider
+    <AlertsContext.Provider
     value={{
         alert: state,
         setAlerts
-
-
     }}
     
     >
         {props.children}
 
-    </AlertContext.Provider>
+    </AlertsContext.Provider>
   )
 }

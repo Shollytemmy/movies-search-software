@@ -12,13 +12,22 @@ import {
                 return{
                     ...state, loading: true
                 }
+
                 case  SEARCH_SHOWS:
                     return{
                         ...state, shows: payload,
                         loading: false
                     }
+
+                    case SET_SHOW_DETAIL:
+                    //    console.log('payload', payload)
+                    //     console.log('state value',state)
+                        return {...state, showdetail: payload,
+                        loading: false}
+                        case CLEAR_SHOW_DETAIL:
+                            return{...state, showdetail: {}}
                 default:
-                    return state
+                    return state 
         }
     }
 

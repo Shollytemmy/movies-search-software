@@ -15,12 +15,13 @@ import {
 } from '../types'
 
 const base_url = ' https://api.tvmaze.com'
+//  https://api.tvmaze.com/shows/1
 
 
 export const ShowsState = (props) => {
   const initialState ={
     shows: [],
-    showdetail: {},
+    showdetail: {},  
     loading: false
   }
 
@@ -33,13 +34,36 @@ export const ShowsState = (props) => {
 
     const {data} = await axios.get(` ${base_url}/search/shows?q=${searchQuery}`)
 
-    console.log(data)
+    // console.log(data)
 
     dispatch({
       type: SEARCH_SHOWS,
       payload: data
     })
 
+  }
+
+  const getSingleMoveDetail = async (id) => {
+    dispatch({
+      type: SET_LOADING
+      
+    })
+    // fetch 
+
+    const {data} = await axios.get(`${base_url}/shows/${id}`)
+    
+
+    dispatch({
+      type: SET_SHOW_DETAIL,
+      payload: data
+    })
+
+  }
+
+  const clearShowDetails = () =>{
+    dispatch({
+      type: CLEAR_SHOW_DETAIL
+    })
   }
   
 
@@ -48,9 +72,9 @@ export const ShowsState = (props) => {
       shows: state.shows,
       showdetail: state.showdetail,
       loding: state.loading,
-      searchShows
-
-      
+      searchShows,
+      getSingleMoveDetail,
+      clearShowDetails,
 
     }}>
       {props.children}

@@ -7,6 +7,7 @@ export const Searchbar = () => {
     const [searchQuery, updateSearch] = useState('')
     const {searchShows} = useContext(ShowsContext)
     const {alert, setAlerts} = useContext(AlertsContext)
+    
 
     const handleSearch = (e) => {
         e.preventDefault();
@@ -22,7 +23,7 @@ export const Searchbar = () => {
     }
   return (
     <div className='searchbar'>
-      {alert ? <Alert message='please eneter name to search' type={alert.type} /> : null}
+      {alert ? <Alert message={alert.message} type={alert.type}/> : null}
         <form className='searchbar__form'>
             
             <input type="text" placeholder='search movies' value={searchQuery} onChange = {(e) => updateSearch(e.target.value)} />
