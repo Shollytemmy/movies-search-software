@@ -183,3 +183,45 @@ img{
   justify-content: center;
   align-items: center;
 }
+
+/*show detail style*/
+
+.showdetail{
+  border: 0px solid red;
+  width: 35%;
+  margin: 1rem auto;
+  padding: 1rem;
+  /* background-color: var(--dark-color); */
+  /* color: var(--main-color); */
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+.showdetail__detail{
+  border: 0px solid red;
+  margin: 1rem auto;
+  font-size: 14px;
+  font-weight: lighter;
+  /* display: flex;
+  flex-direction: column; */
+}
+
+.detail__name{
+  font-size: 20px;
+  font-weight: lighter;
+}
+
+.detail__summary{
+  
+  margin-top: 0.4rem;
+
+}
+
+.detail__genre{
+  display: inline-block;
+  margin-left: 0.4rem;
+}
+
+.detail__official{
+  font-size: 16px;
+  /* margin-bottom: 1rem; */
+}
