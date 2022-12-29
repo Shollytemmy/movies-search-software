@@ -1,6 +1,6 @@
 :root{
-  --dark-color: #171717;
-  --hover-color: rgba(49, 213, 158, 0.267);
+  --dark-color: teal;
+  --hover-color: #171717;
   --main-color: #f4f4f4
 }
 
@@ -184,13 +184,22 @@ img{
 /*show detail style*/
 
 .showdetail{
-  border: 0px solid red;
-  width: 35%;
+  border: 1px solid var(--dark-color);
+  min-width: 50%;
+  max-width: 450px;
   margin: 1rem auto;
-  padding: 1rem;
+  padding: 1.5rem;
+   line-height: 1.5rem;
  
   
   /* box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px; */
+}
+
+.loading__showdetails{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 50vh;
 }
 
 .showdetail > img{
@@ -203,6 +212,7 @@ img{
   margin: 1rem auto;
   font-size: 14px;
   font-weight: lighter;
+  line-height: 1.5rem;
   
 }
 
@@ -224,6 +234,16 @@ img{
 
 .detail__official{
   font-size: 16px;
+  /* margin-top: 9px; */
+  
+}
+
+.detail__official > a.live{
+  background-color: red;
+  text-decoration: none;
+  color: #fff;
+  padding: 5px 8px;
+  border-radius: 5px;
   
 }
 .about{

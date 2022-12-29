@@ -1,6 +1,7 @@
 import React, { useContext, useEffect, useState } from 'react'
 import ShowsContext from '../context/shows/showsContext'
 import { useParams } from 'react-router-dom'
+import { Loading } from '../components/Loading'
 
 export const Showdetails = () => {
 
@@ -25,8 +26,10 @@ function removeTags(str) {
     //eslint-disable-next-line
   }, [])
   return (
-    <>
-      {loading ? <h1>Loading....</h1> :
+    <section>
+      {loading ? <div className='loading__showdetails'>
+        <Loading /> 
+      </div>:
       <div className='showdetail'> 
       <img src={showdetail.image ? showdetail.image.medium :"https://icon-library.com/images/damaged-icon/damaged-icon-11.jpg" } alt={showdetail.name} />
       <div className="showdetail__detail">
@@ -45,7 +48,7 @@ function removeTags(str) {
        </p>
        <p>
        
-        <strong className='detail__official'> Official Site: {showdetail.officialSite? (<a href={showdetail.officialSite}rel='noreferrer'>{showdetail.officialSite}</a>) : 'No official site' } </strong>
+        <strong className='detail__official'> Official Site: {showdetail.officialSite? (<a href={showdetail.officialSite}rel='noreferrer' className='live'>Watch Live</a>) : 'No official site' } </strong>
        </p>
         <p className='detail__summary'>
           
@@ -60,7 +63,7 @@ function removeTags(str) {
       </div>
 
       }
-    </>
+    </section>
   )
 }
 // {showMore ? showdetail.summary : showdetail.summary.slice(0, 20)}
@@ -69,3 +72,5 @@ function removeTags(str) {
           {showMore ? 'showless': 'showmore'}
         </span>
  */
+
+        //{showdetail.officialSite}
