@@ -18,7 +18,7 @@ const base_url = ' https://api.tvmaze.com'
 //  https://api.tvmaze.com/shows/1
 
 
-export const ShowsState = (props) => {
+export const ShowsState = ({children}) => {
   const initialState ={
     shows: [],
     showdetail: {},  
@@ -71,13 +71,13 @@ export const ShowsState = (props) => {
     <ShowsContext.Provider value={{
       shows: state.shows,
       showdetail: state.showdetail,
-      loding: state.loading,
+      loading: state.loading,
       searchShows,
       getSingleMoveDetail,
       clearShowDetails,
 
     }}>
-      {props.children}
+      {children}
 
     </ShowsContext.Provider>
   )

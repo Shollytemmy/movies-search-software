@@ -3,8 +3,7 @@ import {
     SET_LOADING,
     SET_SHOW_DETAIL,
     CLEAR_SHOW_DETAIL,
-    SET_ALERT,
-    REMOVE_ALERT} from '../types'
+    } from '../types'
 
     const showsReducer = (state, {type, payload}) => {
         switch(type){
@@ -20,8 +19,8 @@ import {
                     }
 
                     case SET_SHOW_DETAIL:
-                    //    console.log('payload', payload)
-                    //     console.log('state value',state)
+
+                    
                         return {...state, showdetail: payload,
                         loading: false}
                         case CLEAR_SHOW_DETAIL:

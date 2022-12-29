@@ -3,6 +3,7 @@ import { useContext } from 'react'
 import ShowsContext from '../context/shows/showsContext'
 import { Searchbar } from '../components/Searchbar'
 import ListItem from '../components/ListItem'
+import { Loading } from '../components/Loading'
 
 
 export const Homepage = () => {
@@ -12,7 +13,7 @@ export const Homepage = () => {
     <div className='listItem__list'>
         <Searchbar />
 
-        {loading ? <h1>Loading ....</h1>
+        {loading ? <Loading />
          : shows.map((item) => (
           <ListItem 
           key={item.show.id}

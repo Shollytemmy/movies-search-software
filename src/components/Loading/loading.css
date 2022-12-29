@@ -1,0 +1,25 @@
+.loading{
+    width: 5rem;
+    height: 5rem;
+    border-top: red 5px solid;
+    border-bottom: blue 5px solid;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-radius: 50%;
+    animation: load 1s linear infinite;
+}
+
+@keyframes load{
+
+    0% {
+        transform: rotate(90deg);
+    }
+
+    100%{
+        transform: rotate(360deg);
+    }
+    
+}
+
+
+
