@@ -110,9 +110,6 @@ body {
   color: var(--dark-color);
 }
 
-/* .searchbar__form > input[type="text"]:focus{
-  font-size: 16px;
-} */
 
 .searchbar__form > input:focus{
   border: 1px solid var(--hover-color);
@@ -236,3 +233,11 @@ img{
 
 
 /*Media Queries section*/
+
+@media only screen and (max-width: 768px){
+  .nav__brand a{
+    font-size: 1rem;
+
+  }
+
+}
