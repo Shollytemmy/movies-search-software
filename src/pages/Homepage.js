@@ -4,6 +4,7 @@ import ShowsContext from '../context/shows/showsContext'
 import { Searchbar } from '../components/Searchbar'
 import ListItem from '../components/ListItem'
 import { Loading } from '../components/Loading'
+import { FcRating } from 'react-icons/fc'
 
 
 export const Homepage = () => {
@@ -18,7 +19,7 @@ export const Homepage = () => {
           <ListItem 
           key={item.show.id}
           name = {item.show.name}
-          rating = {item.show.rating.average ? item.show.rating.average : "No ranting"}
+          rating = {item.show.rating.average ? item.show.rating.average  : "No ranting"}
           id = {item.show.id }
           image = {item.show.image ? item.show.image.medium : "https://icon-library.com/images/damaged-icon/damaged-icon-11.jpg" }
 
